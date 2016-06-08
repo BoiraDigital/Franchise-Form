@@ -1,0 +1,34 @@
+<legend>{{'Candidat' | translate }} - {{ 'Your Project' | translate }}</legend>
+<p class="text-center">{{ 'project-description' | translate }}</p>
+<div class="row">
+  <div class="col-xs-12 form-group ">
+    <div class="row">
+      <div class="form-group col-md-6 ">
+        <label class="col-md-12 row control-label  ">{{'cities-text' | translate }} </label>
+        <textarea class="form-control "   name="projectLocations" rows="5" ng-model="model.Project.Locations" type="text"></textarea>
+      </div>
+      <div class="form-group col-md-6 ">
+        <label class="col-md-12 row row control-label ">{{'population-text' | translate }} </label>
+        <input class="form-control "   name="projectPopulation" rows="5" ng-model="model.Project.Population" type="number"/>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 form-group ">
+    <div class="row">
+      <p class="text-center">{{ 'attraction-description' | translate }}</p>
+
+      <div class="form-group col-md-6 ">
+        <label class="col-md-12 row control-label  ">{{'attraction-text' | translate }} </label>
+        <textarea class="form-control "   name="projectAttraction" rows="5" ng-model="model.Project.Attractions" type="text"></textarea>
+      </div>
+      <div class="form-group col-md-6 ">
+        <label class="col-md-12 row control-label  ">{{'zones-text' | translate }} </label>
+        <textarea class="form-control "   name="projectZones" rows="5" ng-model="model.Project.Zones" type="text"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group col-md-12 text-center navigation">
+  <button class="btn btn-success left" ng-click="prev()" type="button">{{ 'Prev' | translate }}</button>
+  <button class="btn btn-success right" ng-click="next()"  type="button">{{ 'Next' | translate }}</button>
+</div>

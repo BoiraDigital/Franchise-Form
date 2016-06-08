@@ -1,0 +1,46 @@
+<legend>{{'Candidat' | translate }} - {{ 'Address and Location' | translate }}</legend>
+<p class="text-center">{{ 'address-description' | translate }}</p>
+<div class="form-group col-md-12">
+	<div class="col-ms-12">
+  		<label class="col-md-2 control-label">{{'Location' | translate }}</label>
+  		<div class="col-md-10">
+        <input class="form-control focus" ng-model="model.Candidat.Address" type="text" get-places>
+  		</div>
+  	</div>
+  	<br>
+		<div class="" style="padding-top:30px">
+  		<div class="form-group">
+  			<div class="col-xs-offset-2 col-xs-6">
+  				<b> <input type="text" ng-model="model.Candidat.AddressCopy.Address" name="addressAddress" placeholder="{{ 'Address' | translate }}" class="form-control"/> </b>
+  			</div>
+  			<div class="col-xs-offset-1 col-xs-3">
+  				<b> <input type="text" placeholder="{{ 'Number' | translate }}" ng-model="model.Candidat.AddressCopy.Number" class="form-control" name="addressNumber"/> </b>
+  			</div>
+  		</div>
+  		<div class="form-group">
+  			<div class="col-xs-offset-2 col-xs-4">
+  				<b> <input type="text" ng-model="model.Candidat.AddressCopy.PostalCode" placeholder="{{ 'PostalCode' | translate }}" class="form-control" name="addressPostalCode"/> </b>
+  			</div>
+  			<div class="col-xs-offset-1 col-xs-5">
+  				<b> <input type="text" ng-model="model.Candidat.AddressCopy.City" placeholder="{{ 'City' | translate }}" class="form-control" name="addressCity" required/> </b>
+  			</div>
+  		</div>
+  		<div class="form-group">
+  			<div class="col-xs-offset-2 col-xs-4">
+  				<b> <input type="text" ng-model="model.Candidat.AddressCopy.AdminLv2" placeholder="{{ 'AdminLv2' | translate }}" class="form-control" name="addressAdminLv2"/> </b>
+  			</div>
+  			<div class="col-xs-offset-1 col-xs-5">
+  				<b> <input type="text" ng-model="model.Candidat.AddressCopy.AdminLv1" placeholder="{{ 'AdminLv1' | translate }}" class="form-control" name="addressAdminLv1"/> </b>
+  			</div>
+  		</div>
+  		<div class="form-group">
+  			<div class="col-xs-offset-2 col-xs-10" ng-class="{'warning' : form.addressCountry.$valid && !form.addressCountry.$valid}">
+  				<b> <input type="text" ng-model="model.Candidat.AddressCopy.Country" placeholder="{{ 'Country' | translate }}" class="form-control" name="addressCountry" required/> </b>
+  			</div>
+  		</div>
+  	</div>
+</div>
+<div class="form-group col-md-12 text-center navigation">
+  <button class="btn btn-success left" ng-click="prev()" type="button">{{ 'Prev' | translate }}</button>
+  <button class="btn btn-success right" ng-click="next()" ng-disabled="validateAddress()" type="button">{{ 'Next' | translate }}</button>
+</div>

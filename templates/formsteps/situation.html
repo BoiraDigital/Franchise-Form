@@ -1,0 +1,14 @@
+<legend>{{'Candidat' | translate }} - {{ 'Personal Situation' | translate }}</legend>
+<p class="text-center">{{ 'situation-description' | translate }}</p>
+<div class="col-md-12 form-group">
+	<label>{{'Explain us your situation' | translate }}</label>
+	<textarea ng-model="model.Candidat.Situation" name="situation" required  minlength="25" class="form-control" rows="6"></textarea>
+</div>
+<div class="col-md-12 form-group">
+	<label>{{'Add files for additiona information' | translate }}</label>
+	<file-upload ng-model="model.Candidat.Files" data-text="{{'Click to upload' | translate}}"></file-upload>
+</div>
+<div class="form-group col-md-12 text-center navigation">
+  <button class="btn btn-success left" ng-click="prev()" type="button">{{ 'Prev' | translate }}</button>
+  <button class="btn btn-success right" ng-click="next()" ng-disabled="validateSituation()" type="button">{{ 'Next' | translate }}</button>
+</div> 

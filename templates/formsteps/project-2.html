@@ -1,0 +1,64 @@
+<legend>{{'Project' | translate }} - {{ 'Description' | translate }}</legend> 
+<p class="text-center">{{ 'projectpart2-description' | translate }}</p>
+<!-- <div class="col-lg-12 col-xs-12" >
+	<label>{{'Investement description' | translate }}</label>
+	<textarea ng-model="model.Project.Description"  class="form-control" rows="6"></textarea>
+</div> -->
+<div class="row">
+	<div class="col-lg-12 col-xs-12" >
+		<label class="col-md-12 control-label">{{'Do you have a commertial local?' | translate }}</label>
+		<div class="col-md-12 text-center" style="font-size:2em;">
+			<label>{{ 'Yes' | translate }}
+			<input type="radio" ng-model="model.Project.Local" value="true" />
+			<label>{{ 'No' | translate }}
+			<input type="radio" ng-model="model.Project.Local" value="false" />
+		</div>
+		<div class="col-md-6" ng-show="model.Project.Local == 'true'">
+			<div class="col-xs-12 row">
+				<label>{{'Surface' | translate }}</label>
+				<input ng-model="model.Project.LocalParams.Surface"  class="form-control" />
+			</div>
+
+			<div class="col-xs-12 row">
+				<label>{{'Floor' | translate }}</label>
+				<input ng-model="model.Project.LocalParams.Floor"  class="form-control" />
+			</div>
+
+			<div class="col-xs-12 row">
+				<label>{{'Terrace' | translate }}</label>
+				<div class="col-md-12">
+					<label>{{ 'Yes' | translate }}
+					<input type="radio" ng-model="model.Project.LocalParams.Terrace" value="true" />
+					<label>{{ 'No' | translate }}
+					<input type="radio" ng-model="model.Project.LocalParams.Terrace" value="false" />
+				</div>
+			</div>
+
+			<div class="col-xs-12 row">
+				<label>{{'Current local Activity' | translate }}</label>
+				<input ng-model="model.Project.LocalParams.CurrentActivity"  class="form-control" />
+			</div>
+
+		</div>
+		<div class="col-md-6" ng-show="model.Project.Local == 'true'">
+			<label>{{'Local Geolocation' | translate }}</label>
+			<ui-gmap-google-map center='map.center' zoom='map.zoom' >
+				 <ui-gmap-free-draw-polygons
+			             polygons='map.poligons'
+			             draw='draw'
+			     >
+					</ui-gmap-free-draw-polygons> 
+				<ui-gmap-marker coords="map.center" options="marker.options" events="marker.events" idkey="3">
+			        </ui-gmap-marker>
+			    <ui-gmap-polygon ng-repeat="polygon in map.polygons" path="polygon.path" fill="polygon.fill">
+					</ui-gmap-polygon>
+			    <ui-gmap-search-box template="map.searchbox.template" events="map.searchbox.events"></ui-gmap-search-box>
+			</ui-gmap-google-map>
+		</div>
+
+	</div>
+</div>
+<div class="form-group col-md-12 text-center navigation">
+  <button class="btn btn-success left" ng-click="prev()" type="button">{{ 'Prev' | translate }}</button>
+  <button class="btn btn-success right" ng-click="next()" type="button">{{ 'Next' | translate }}</button>
+</div>

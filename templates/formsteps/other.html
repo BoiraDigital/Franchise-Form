@@ -1,0 +1,27 @@
+<legend>{{'Obserbations & References' | translate }}</legend> 
+<p class="text-center">{{ 'obserbations-description' | translate }}</p>
+<div class="col-xs-12 form-group">
+	<label>{{'Particulary obserbations' | translate }}</label>
+	<textarea ng-model="model.Other"  class="form-control" rows="6"></textarea>
+</div>
+<div class="col-md-6">
+	<label>{{'Add references' | translate }}</label>
+	<input ng-model="reference.name"  name="referenceName" required class="form-control" placeholder="{{ 'Name' | translate }}"/>
+	<input ng-model="reference.address"  class="form-control" placeholder="{{ 'Address' | translate }}"/>
+	<input ng-model="reference.mail"  name="referenceMail"  required type="email" class="form-control" placeholder="{{ 'Email' | translate }}"/>
+	<input ng-model="reference.phone"  class="form-control" placeholder="{{ 'Phone' | translate }}"/>
+	<hr>
+	<button type="button" ng-disabled="!reference.name ||  ! reference.mail" class="btn btn-success" ng-click="copy(s)">{{'Add Reference' | translate }}</button>
+
+
+</div>
+<div class="col-md-6">
+	<label>{{'Contacts' | translate }}</label>
+	<ul class="list-unstyle">
+		<li ng-repeat="x in model.References track by $index">{{ x.name }} <small><{{x.mail}}></small><i class="glyphicon glyphicon-remove right" ng-click="delete(model.References , $index)"></i></li>
+	</ul>
+</div>
+<div class="form-group col-md-12 text-center navigation">
+  <button class="btn btn-success left" ng-click="prev()" type="button">{{ 'Prev' | translate }}</button>
+  <button class="btn btn-success right" ng-click="next()"  type="button">{{ 'Finish' | translate }}</button>
+</div>
